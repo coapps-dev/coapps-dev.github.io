@@ -1,80 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
-    });
-
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(contactForm);
-            const name = contactForm.querySelector('input[type="text"]').value;
-            const email = contactForm.querySelector('input[type="email"]').value;
-            const interest = contactForm.querySelector('select').value;
-            const message = contactForm.querySelector('textarea').value;
-            
-            if (name && email && interest && message) {
-                showNotification('Thank you for your message! We\'ll get back to you soon.', 'success');
-                contactForm.reset();
-            } else {
-                showNotification('Please fill in all fields.', 'error');
-            }
-        });
-    }
-
-    function showNotification(message, type) {
-        const notification = document.createElement('div');
-        notification.className = `notification ${type}`;
-        notification.textContent = message;
-        
-        notification.style.cssText = `
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            padding: 1rem 1.5rem;
-            border-radius: 0.75rem;
-            color: white;
-            font-weight: 500;
-            z-index: 10000;
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-            max-width: 300px;
-            font-family: 'Outfit', sans-serif;
-        `;
-        
-        if (type === 'success') {
-            notification.style.background = 'linear-gradient(135deg, #10b981 0%, #34d399 100%)';
-        } else {
-            notification.style.background = 'linear-gradient(135deg, #ef4444 0%, #f87171 100%)';
-        }
-        
-        document.body.appendChild(notification);
-        
-        setTimeout(() => {
-            notification.style.transform = 'translateX(0)';
-        }, 100);
-        
-        setTimeout(() => {
-            notification.style.transform = 'translateX(100%)';
-            setTimeout(() => {
-                document.body.removeChild(notification);
-            }, 300);
-        }, 3000);
-    }
-
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -89,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.app-card, .contact-item');
+    const animatedElements = document.querySelectorAll('.floating-card');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -128,60 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.animationDelay = `${index * -2}s`;
     });
 
-    const appCards = document.querySelectorAll('.app-card');
-    appCards.forEach((card, index) => {
-        card.style.animationDelay = `${index * 0.2}s`;
-    });
-
-    const contactItems = document.querySelectorAll('.contact-item');
-    contactItems.forEach((item, index) => {
-        item.style.animationDelay = `${index * 0.2}s`;
-    });
-
-    const socialLinks = document.querySelectorAll('.social-link');
-    socialLinks.forEach(link => {
-        link.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px) scale(1.1)';
-        });
-        
-        link.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
-
-    const appCardsHover = document.querySelectorAll('.app-card');
-    appCardsHover.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px) scale(1.02)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
-
-    const formInputs = document.querySelectorAll('.form-group input, .form-group textarea, .form-group select');
-    formInputs.forEach(input => {
-        input.addEventListener('focus', function() {
-            this.parentElement.style.transform = 'scale(1.02)';
-        });
-        
-        input.addEventListener('blur', function() {
-            this.parentElement.style.transform = 'scale(1)';
-        });
-    });
-
-    const buttons = document.querySelectorAll('.btn');
-    buttons.forEach(button => {
-        button.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px) scale(1.05)';
-        });
-        
-        button.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
-
     const logo = document.querySelector('.logo-text');
     if (logo) {
         logo.addEventListener('mouseenter', function() {
@@ -193,23 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    const footerLogo = document.querySelector('.footer-logo');
-    if (footerLogo) {
-        footerLogo.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.1)';
-        });
-        
-        footerLogo.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1)';
-        });
-    }
-
-    const currentYear = new Date().getFullYear();
-    const copyrightElement = document.querySelector('.footer-bottom p');
-    if (copyrightElement) {
-        copyrightElement.textContent = `© ${currentYear} CoApps. All rights reserved.`;
-    }
-
     const parallaxElements = document.querySelectorAll('.gradient-orb');
     window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
@@ -219,94 +72,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    const typingEffect = function(element, text, speed = 100) {
-        let i = 0;
-        element.textContent = '';
-        
-        function typeWriter() {
-            if (i < text.length) {
-                element.textContent += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, speed);
-            }
-        }
-        
-        typeWriter();
-    };
-
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle && window.innerWidth > 768) {
-        const originalText = heroTitle.textContent;
-        heroTitle.textContent = '';
-        
-        setTimeout(() => {
-            typingEffect(heroTitle, originalText, 50);
-        }, 500);
-    }
-
-    const coTexts = ['Constructive', 'Collaborative', 'Community'];
-    let currentCoIndex = 0;
     const typingTextElement = document.querySelector('.typing-text');
     
     if (typingTextElement) {
-        function cycleCoText() {
-            const currentText = coTexts[currentCoIndex];
-            typingTextElement.textContent = '';
-            
-            let i = 0;
-            function typeCo() {
-                if (i < currentText.length) {
-                    typingTextElement.textContent += currentText.charAt(i);
-                    i++;
-                    setTimeout(typeCo, 100);
-                } else {
-                    setTimeout(() => {
-                        let j = currentText.length;
-                        function deleteCo() {
-                            if (j > 0) {
-                                typingTextElement.textContent = currentText.substring(0, j - 1);
-                                j--;
-                                setTimeout(deleteCo, 50);
-                            } else {
-                                currentCoIndex = (currentCoIndex + 1) % coTexts.length;
-                                setTimeout(cycleCoText, 1000);
-                            }
-                        }
-                        deleteCo();
-                    }, 2000);
-                }
+        const fullText = "Improving Lifestyle with AI-Powered Apps";
+        typingTextElement.textContent = '';
+        
+        let i = 0;
+        function typeWriter() {
+            if (i < fullText.length) {
+                typingTextElement.textContent += fullText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
             }
-            typeCo();
         }
         
-        setTimeout(cycleCoText, 2000);
+        setTimeout(typeWriter, 1000);
     }
-
-    const featureTags = document.querySelectorAll('.feature-tag');
-    featureTags.forEach(tag => {
-        tag.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px) scale(1.05)';
-            this.style.background = 'var(--gradient-primary)';
-            this.style.color = 'white';
-            this.style.borderColor = 'var(--primary-color)';
-        });
-        
-        tag.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-            this.style.background = 'var(--background-elevated)';
-            this.style.color = 'var(--text-secondary)';
-            this.style.borderColor = 'var(--border-color)';
-        });
-    });
-
-    const statusBadges = document.querySelectorAll('.status-badge');
-    statusBadges.forEach(badge => {
-        badge.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.1)';
-        });
-        
-        badge.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1)';
-        });
-    });
 }); 

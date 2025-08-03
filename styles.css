@@ -156,7 +156,7 @@ body {
     align-items: center;
     position: relative;
     padding-top: 70px;
-    background: var(--background-soft);
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
 }
 
 .hero-container {
@@ -196,10 +196,26 @@ body {
     line-height: 1.6;
 }
 
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+.coming-soon-badge {
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+.badge-text {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    box-shadow: var(--shadow-soft);
+    display: inline-block;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
 .btn {
