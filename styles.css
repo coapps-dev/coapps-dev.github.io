@@ -90,6 +90,7 @@
 /* Base Styles */
 html {
     scroll-behavior: smooth;
+    background-color: var(--color-black);
 }
 
 body {
@@ -101,6 +102,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
 /* Typography */
@@ -188,7 +190,7 @@ p {
     align-items: center;
     justify-content: center;
     padding-top: 80px;
-    background: var(--color-background);
+    background: var(--color-black);
     position: relative;
 }
 
@@ -213,8 +215,18 @@ p {
 }
 
 .title-line.accent {
-    color: var(--color-gray-600);
+    background: linear-gradient(90deg, #404040, #737373, #a3a3a3, #737373, #404040);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-weight: 300;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
 }
 
 .hero-subtitle {
@@ -278,7 +290,7 @@ p {
 
 /* Footer */
 .footer {
-    background: var(--color-surface);
+    background: var(--color-black);
     border-top: 1px solid var(--color-border);
     padding: var(--space-4xl) 0 var(--space-2xl);
     text-align: center;
