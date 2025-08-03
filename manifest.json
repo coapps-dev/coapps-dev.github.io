@@ -1,11 +1,11 @@
 {
-  "name": "CoApps - Modern App Development",
+  "name": "CoApps - AI-Powered Lifestyle Apps",
   "short_name": "CoApps",
-  "description": "Building the future of digital experiences with passion and innovation",
+  "description": "Improving lifestyle with AI-powered applications. Constructive, Collaborative, and Community-driven.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0a0a",
-  "theme_color": "#6366f1",
+  "background_color": "#ffffff",
+  "theme_color": "#8b5cf6",
   "orientation": "portrait-primary",
   "icons": [
     {

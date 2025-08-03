@@ -23,10 +23,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const formData = new FormData(contactForm);
             const name = contactForm.querySelector('input[type="text"]').value;
             const email = contactForm.querySelector('input[type="email"]').value;
-            const subject = contactForm.querySelectorAll('input[type="text"]')[1].value;
+            const interest = contactForm.querySelector('select').value;
             const message = contactForm.querySelector('textarea').value;
             
-            if (name && email && subject && message) {
+            if (name && email && interest && message) {
                 showNotification('Thank you for your message! We\'ll get back to you soon.', 'success');
                 contactForm.reset();
             } else {
@@ -45,19 +45,20 @@ document.addEventListener('DOMContentLoaded', function() {
             top: 100px;
             right: 20px;
             padding: 1rem 1.5rem;
-            border-radius: 0.5rem;
+            border-radius: 0.75rem;
             color: white;
             font-weight: 500;
             z-index: 10000;
             transform: translateX(100%);
             transition: transform 0.3s ease;
             max-width: 300px;
+            font-family: 'Outfit', sans-serif;
         `;
         
         if (type === 'success') {
-            notification.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+            notification.style.background = 'linear-gradient(135deg, #10b981 0%, #34d399 100%)';
         } else {
-            notification.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+            notification.style.background = 'linear-gradient(135deg, #ef4444 0%, #f87171 100%)';
         }
         
         document.body.appendChild(notification);
@@ -88,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.service-card, .stat-item, .tech-item, .contact-item');
+    const animatedElements = document.querySelectorAll('.app-card, .contact-item');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -105,15 +106,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
             navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
         } else {
-            navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
             navbar.style.boxShadow = 'none';
         }
         
         scrollTimeout = setTimeout(() => {
-            navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
         }, 150);
     });
 
@@ -127,19 +128,9 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.animationDelay = `${index * -2}s`;
     });
 
-    const techItems = document.querySelectorAll('.tech-item');
-    techItems.forEach((item, index) => {
-        item.style.animationDelay = `${index * 0.1}s`;
-    });
-
-    const serviceCards = document.querySelectorAll('.service-card');
-    serviceCards.forEach((card, index) => {
+    const appCards = document.querySelectorAll('.app-card');
+    appCards.forEach((card, index) => {
         card.style.animationDelay = `${index * 0.2}s`;
-    });
-
-    const statsItems = document.querySelectorAll('.stat-item');
-    statsItems.forEach((item, index) => {
-        item.style.animationDelay = `${index * 0.3}s`;
     });
 
     const contactItems = document.querySelectorAll('.contact-item');
@@ -158,8 +149,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    const serviceCardsHover = document.querySelectorAll('.service-card');
-    serviceCardsHover.forEach(card => {
+    const appCardsHover = document.querySelectorAll('.app-card');
+    appCardsHover.forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-5px) scale(1.02)';
         });
@@ -169,18 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    const techItemsHover = document.querySelectorAll('.tech-item');
-    techItemsHover.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px) scale(1.05)';
-        });
-        
-        item.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
-
-    const formInputs = document.querySelectorAll('.form-group input, .form-group textarea');
+    const formInputs = document.querySelectorAll('.form-group input, .form-group textarea, .form-group select');
     formInputs.forEach(input => {
         input.addEventListener('focus', function() {
             this.parentElement.style.transform = 'scale(1.02)';
@@ -264,41 +244,69 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 500);
     }
 
-    const statsNumbers = document.querySelectorAll('.stat-number');
-    const statsObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const target = entry.target;
-                const finalNumber = target.textContent;
-                const isPercentage = finalNumber.includes('%');
-                const isPlus = finalNumber.includes('+');
-                const isTime = finalNumber.includes('/');
-                
-                let number = parseInt(finalNumber.replace(/[^\d]/g, ''));
-                let current = 0;
-                const increment = number / 50;
-                
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= number) {
-                        current = number;
-                        clearInterval(timer);
-                    }
-                    
-                    let displayText = Math.floor(current).toString();
-                    if (isPercentage) displayText += '%';
-                    if (isPlus) displayText += '+';
-                    if (isTime) displayText = '24/7';
-                    
-                    target.textContent = displayText;
-                }, 30);
-                
-                statsObserver.unobserve(target);
+    const coTexts = ['Constructive', 'Collaborative', 'Community'];
+    let currentCoIndex = 0;
+    const typingTextElement = document.querySelector('.typing-text');
+    
+    if (typingTextElement) {
+        function cycleCoText() {
+            const currentText = coTexts[currentCoIndex];
+            typingTextElement.textContent = '';
+            
+            let i = 0;
+            function typeCo() {
+                if (i < currentText.length) {
+                    typingTextElement.textContent += currentText.charAt(i);
+                    i++;
+                    setTimeout(typeCo, 100);
+                } else {
+                    setTimeout(() => {
+                        let j = currentText.length;
+                        function deleteCo() {
+                            if (j > 0) {
+                                typingTextElement.textContent = currentText.substring(0, j - 1);
+                                j--;
+                                setTimeout(deleteCo, 50);
+                            } else {
+                                currentCoIndex = (currentCoIndex + 1) % coTexts.length;
+                                setTimeout(cycleCoText, 1000);
+                            }
+                        }
+                        deleteCo();
+                    }, 2000);
+                }
             }
-        });
-    }, { threshold: 0.5 });
+            typeCo();
+        }
+        
+        setTimeout(cycleCoText, 2000);
+    }
 
-    statsNumbers.forEach(stat => {
-        statsObserver.observe(stat);
+    const featureTags = document.querySelectorAll('.feature-tag');
+    featureTags.forEach(tag => {
+        tag.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px) scale(1.05)';
+            this.style.background = 'var(--gradient-primary)';
+            this.style.color = 'white';
+            this.style.borderColor = 'var(--primary-color)';
+        });
+        
+        tag.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.background = 'var(--background-elevated)';
+            this.style.color = 'var(--text-secondary)';
+            this.style.borderColor = 'var(--border-color)';
+        });
+    });
+
+    const statusBadges = document.querySelectorAll('.status-badge');
+    statusBadges.forEach(badge => {
+        badge.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
+        });
+        
+        badge.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
     });
 }); 
