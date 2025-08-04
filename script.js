@@ -52,4 +52,73 @@ document.addEventListener('DOMContentLoaded', function() {
             heroContent.style.transform = 'translateY(0)';
         }, 300);
     }
+
+    // Floating Shapes Animation
+    const floatingShapesContainer = document.querySelector('.floating-shapes');
+    
+    function createFloatingShape() {
+        if (!floatingShapesContainer) return;
+        
+        const shape = document.createElement('div');
+        const shapeTypes = ['circle', 'square', 'triangle'];
+        const randomType = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
+        
+        // Random size between 20px and 60px
+        const size = Math.random() * 40 + 20;
+        
+        // Random starting position from left or right side
+        const startFromLeft = Math.random() > 0.5;
+        const startX = startFromLeft ? -100 : window.innerWidth + 100;
+        const startY = Math.random() * window.innerHeight;
+        
+        // Random end position
+        const endX = startFromLeft ? window.innerWidth + 100 : -100;
+        const endY = startY + (Math.random() - 0.5) * 200;
+        
+        shape.className = `floating-shape ${randomType}`;
+        
+        if (randomType === 'triangle') {
+            shape.style.width = '0';
+            shape.style.height = '0';
+            shape.style.borderLeft = `${size/2}px solid transparent`;
+            shape.style.borderRight = `${size/2}px solid transparent`;
+            shape.style.borderBottom = `${size}px solid rgba(255, 255, 255, 0.1)`;
+        } else {
+            shape.style.width = `${size}px`;
+            shape.style.height = `${size}px`;
+        }
+        
+        shape.style.left = `${startX}px`;
+        shape.style.top = `${startY}px`;
+        
+        // Custom animation for this shape
+        shape.style.animation = `float-in 8s ease-out forwards`;
+        
+        floatingShapesContainer.appendChild(shape);
+        
+        // Remove shape after animation completes
+        setTimeout(() => {
+            if (shape.parentNode) {
+                shape.parentNode.removeChild(shape);
+            }
+        }, 8000);
+    }
+    
+    // Create shapes at random intervals
+    function startFloatingShapes() {
+        // Create initial shapes
+        setTimeout(createFloatingShape, 1000);
+        setTimeout(createFloatingShape, 3000);
+        setTimeout(createFloatingShape, 5000);
+        
+        // Continue creating shapes at random intervals
+        setInterval(() => {
+            if (Math.random() > 0.7) { // 30% chance every interval
+                createFloatingShape();
+            }
+        }, 4000);
+    }
+    
+    // Start the floating shapes after a delay
+    setTimeout(startFloatingShapes, 2000);
 }); 
