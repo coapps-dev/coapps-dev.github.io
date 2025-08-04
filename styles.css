@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+/* Ensure all elements have black background */
+* {
+    background-color: var(--color-black);
+}
+
 :root {
     /* Typography */
     --font-display: 'Playfair Display', serif;
@@ -98,7 +103,7 @@ body {
     font-size: var(--text-base);
     line-height: 1.7;
     color: var(--color-text-primary);
-    background-color: var(--color-background);
+    background-color: var(--color-black);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
@@ -192,6 +197,8 @@ p {
     padding-top: 80px;
     background: var(--color-black);
     position: relative;
+    margin: 0;
+    padding-bottom: 0;
 }
 
 .hero-container {
@@ -265,7 +272,7 @@ p {
     align-items: center;
     gap: var(--space-md);
     padding: var(--space-md) var(--space-xl);
-    background: var(--color-surface);
+    background: var(--color-surface) !important;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-2xl);
     font-size: var(--text-sm);
@@ -298,11 +305,12 @@ p {
     pointer-events: none;
     z-index: 1;
     overflow: hidden;
+    background-color: transparent;
 }
 
 .floating-shape {
     position: absolute;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1) !important;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     animation: float-in 8s ease-out forwards;
@@ -352,6 +360,7 @@ p {
     border-top: 1px solid var(--color-border);
     padding: var(--space-4xl) 0 var(--space-2xl);
     text-align: center;
+    margin: 0;
 }
 
 .footer-content {
