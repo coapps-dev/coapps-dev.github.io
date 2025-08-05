@@ -295,6 +295,32 @@ p {
     50% { opacity: 0.5; }
 }
 
+/* Cursor Spotlight Effect */
+.cursor-spotlight {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    background: radial-gradient(
+        circle 150px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(255, 255, 255, 0.15) 0%,
+        rgba(255, 255, 255, 0.08) 20%,
+        rgba(255, 255, 255, 0.04) 40%,
+        rgba(255, 255, 255, 0.02) 60%,
+        rgba(255, 255, 255, 0.01) 80%,
+        transparent 100%
+    );
+}
+
+.cursor-spotlight.active {
+    opacity: 1;
+}
+
 /* Floating Shapes */
 .floating-shapes {
     position: fixed;

@@ -1,4 +1,52 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Cursor Spotlight Effect
+    const spotlight = document.querySelector('.cursor-spotlight');
+    let isMouseMoving = false;
+    let mouseTimeout;
+    
+    if (spotlight) {
+        // Track mouse movement
+        document.addEventListener('mousemove', function(e) {
+            const x = (e.clientX / window.innerWidth) * 100;
+            const y = (e.clientY / window.innerHeight) * 100;
+            
+            // Update CSS custom properties for spotlight position
+            spotlight.style.setProperty('--mouse-x', x + '%');
+            spotlight.style.setProperty('--mouse-y', y + '%');
+            
+            // Add active class when mouse is moving
+            if (!isMouseMoving) {
+                spotlight.classList.add('active');
+                isMouseMoving = true;
+            }
+            
+            // Clear existing timeout
+            if (mouseTimeout) {
+                clearTimeout(mouseTimeout);
+            }
+            
+            // Set timeout to fade out spotlight when mouse stops moving
+            mouseTimeout = setTimeout(() => {
+                spotlight.classList.remove('active');
+                isMouseMoving = false;
+            }, 2000); // Fade out after 2 seconds of no movement
+        });
+        
+        // Hide spotlight when mouse leaves the window
+        document.addEventListener('mouseleave', function() {
+            spotlight.classList.remove('active');
+            isMouseMoving = false;
+            if (mouseTimeout) {
+                clearTimeout(mouseTimeout);
+            }
+        });
+        
+        // Show spotlight when mouse enters the window
+        document.addEventListener('mouseenter', function() {
+            spotlight.classList.add('active');
+        });
+    }
+
     // Simple navbar scroll effect
     let scrollTimeout;
     window.addEventListener('scroll', function() {
