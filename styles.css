@@ -321,6 +321,13 @@ p {
     opacity: 1;
 }
 
+/* Hide spotlight on touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .cursor-spotlight {
+        display: none;
+    }
+}
+
 /* Floating Shapes */
 .floating-shapes {
     position: fixed;

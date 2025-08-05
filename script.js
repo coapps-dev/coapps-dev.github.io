@@ -1,10 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Cursor Spotlight Effect
+    // Cursor Spotlight Effect (only on non-touch devices)
     const spotlight = document.querySelector('.cursor-spotlight');
     let isMouseMoving = false;
     let mouseTimeout;
     
-    if (spotlight) {
+    // Check if device supports hover (not a touch device)
+    const supportsHover = window.matchMedia('(hover: hover)').matches;
+    
+    if (spotlight && supportsHover) {
         // Track mouse movement
         document.addEventListener('mousemove', function(e) {
             const x = (e.clientX / window.innerWidth) * 100;
