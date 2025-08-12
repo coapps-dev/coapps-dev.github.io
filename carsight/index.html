@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarSight — AI-Powered Vehicle Recognition | CoApps</title>
+    <meta name="description" content="Join the CarSight waitlist - AI-powered vehicle recognition technology that revolutionizes how we identify and interact with vehicles.">
+    <meta name="keywords" content="CarSight, vehicle recognition, AI cars, automotive AI, CoApps, artificial intelligence, vehicle identification">
+    <meta name="author" content="CoApps">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="CarSight — AI-Powered Vehicle Recognition">
+    <meta property="og:description" content="Join the waitlist for CarSight - revolutionary AI-powered vehicle recognition technology.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://co-apps.com/carsight">
+    <meta property="og:image" content="https://co-apps.com/logo_white.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CarSight — AI-Powered Vehicle Recognition">
+    <meta name="twitter:description" content="Join the waitlist for CarSight - revolutionary AI-powered vehicle recognition technology.">
+    <meta name="twitter:image" content="https://co-apps.com/logo_white.png">
+    <link rel="canonical" href="https://co-apps.com/carsight">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" href="/logo_white.png">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .carsight-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--space-4xl) var(--space-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carsight-container {
+            max-width: 800px;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .carsight-title {
+            font-family: var(--font-display);
+            font-size: var(--text-6xl);
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: var(--space-lg);
+            line-height: 1.1;
+        }
+
+        .carsight-subtitle {
+            font-family: var(--font-body);
+            font-size: var(--text-xl);
+            color: var(--color-gray-300);
+            margin-bottom: var(--space-2xl);
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .waitlist-form {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-xl);
+            padding: var(--space-3xl);
+            margin: var(--space-2xl) auto;
+            max-width: 500px;
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .form-title {
+            font-family: var(--font-display);
+            font-size: var(--text-3xl);
+            font-weight: 600;
+            color: var(--color-white);
+            margin-bottom: var(--space-lg);
+            text-align: center;
+        }
+
+        .form-description {
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            color: var(--color-gray-300);
+            margin-bottom: var(--space-2xl);
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .form-group {
+            margin-bottom: var(--space-xl);
+        }
+
+        .form-label {
+            display: block;
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            font-weight: 500;
+            color: var(--color-white);
+            margin-bottom: var(--space-sm);
+            text-align: left;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: var(--space-lg);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-lg);
+            color: var(--color-white);
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            transition: all var(--transition-normal);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-pastel-mint);
+            box-shadow: 0 0 0 3px rgba(236, 253, 245, 0.1);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-input::placeholder {
+            color: var(--color-gray-400);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: var(--space-lg);
+            background: linear-gradient(135deg, var(--color-pastel-mint), var(--color-pastel-blue));
+            border: none;
+            border-radius: var(--radius-lg);
+            color: var(--color-black);
+            font-family: var(--font-body);
+            font-size: var(--text-lg);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+            background: linear-gradient(135deg, var(--color-pastel-blue), var(--color-pastel-mint));
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .success-message {
+            background: rgba(236, 253, 245, 0.1);
+            border: 1px solid rgba(236, 253, 245, 0.3);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-top: var(--space-lg);
+            text-align: center;
+            color: var(--color-pastel-mint);
+            font-family: var(--font-body);
+            display: none;
+        }
+
+        .error-message {
+            background: rgba(254, 226, 226, 0.1);
+            border: 1px solid rgba(254, 226, 226, 0.3);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-top: var(--space-lg);
+            text-align: center;
+            color: #fecaca;
+            font-family: var(--font-body);
+            display: none;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: var(--color-gray-400);
+            text-decoration: none;
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            margin-top: var(--space-2xl);
+            transition: color var(--transition-normal);
+        }
+
+        .back-link:hover {
+            color: var(--color-white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+            margin: var(--space-4xl) 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: var(--text-4xl);
+            color: var(--color-pastel-mint);
+            margin-bottom: var(--space-lg);
+        }
+
+        .feature-title {
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            font-weight: 600;
+            color: var(--color-white);
+            margin-bottom: var(--space-md);
+        }
+
+        .feature-description {
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            color: var(--color-gray-300);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .carsight-title {
+                font-size: var(--text-4xl);
+            }
+            
+            .carsight-subtitle {
+                font-size: var(--text-lg);
+            }
+            
+            .waitlist-form {
+                padding: var(--space-xl);
+                margin: var(--space-xl) var(--space-md);
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="/logo_white.png" alt="CoApps Logo" class="logo-image">
+                <span class="logo-text">CoApps</span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="carsight-hero">
+            <div class="carsight-container">
+                <h1 class="carsight-title">CarSight</h1>
+                <p class="carsight-subtitle">
+                    Revolutionary AI-powered vehicle recognition technology that transforms how we identify, 
+                    track, and interact with vehicles in real-time.
+                </p>
+
+                <div class="waitlist-form">
+                    <h2 class="form-title">Join the Waitlist</h2>
+                    <p class="form-description">
+                        Be among the first to experience the future of vehicle recognition. 
+                        Get early access and exclusive updates.
+                    </p>
+                    
+                    <form id="waitlistForm">
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                class="form-input" 
+                                placeholder="Enter your email address"
+                                required
+                            >
+                        </div>
+                        
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <span id="btnText">Join Waitlist</span>
+                            <span id="btnLoading" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Joining...
+                            </span>
+                        </button>
+                    </form>
+
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i>
+                        <strong>Welcome to CarSight!</strong> You've been added to our waitlist. 
+                        We'll notify you as soon as we have updates.
+                    </div>
+
+                    <div class="error-message" id="errorMessage">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <strong>Oops!</strong> Something went wrong. Please try again.
+                    </div>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="feature-title">Real-time Recognition</h3>
+                        <p class="feature-description">
+                            Instantly identify vehicles with advanced AI algorithms and computer vision technology.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="feature-title">AI-Powered</h3>
+                        <p class="feature-description">
+                            Leveraging cutting-edge machine learning for unparalleled accuracy and performance.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Mobile First</h3>
+                        <p class="feature-description">
+                            Designed for mobile devices with seamless integration and intuitive user experience.
+                        </p>
+                    </div>
+                </div>
+
+                <a href="/" class="back-link">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to CoApps
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cursor Spotlight Effect -->
+    <div class="cursor-spotlight"></div>
+    
+    <!-- Floating Shapes Container -->
+    <div class="floating-shapes"></div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="/logo_white.png" alt="CoApps Logo" class="logo-image">
+                        <span class="logo-text">CoApps</span>
+                    </div>
+                    <p class="footer-description">
+                        Creating intelligent applications that improve your lifestyle through thoughtful design and AI-powered solutions.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 CoApps. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('waitlistForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const btnLoading = document.getElementById('btnLoading');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const email = document.getElementById('email').value;
+                
+                // Show loading state
+                submitBtn.disabled = true;
+                btnText.style.display = 'none';
+                btnLoading.style.display = 'inline';
+                
+                // Hide any existing messages
+                successMessage.style.display = 'none';
+                errorMessage.style.display = 'none';
+
+                try {
+                    // Simulate API call (replace with actual endpoint)
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    
+                    // For demo purposes, we'll just show success
+                    // In production, you'd send this to your backend
+                    console.log('Email submitted:', email);
+                    
+                    // Show success message
+                    successMessage.style.display = 'block';
+                    
+                    // Reset form
+                    form.reset();
+                    
+                } catch (error) {
+                    console.error('Error submitting form:', error);
+                    errorMessage.style.display = 'block';
+                } finally {
+                    // Reset button state
+                    submitBtn.disabled = false;
+                    btnText.style.display = 'inline';
+                    btnLoading.style.display = 'none';
+                }
+            });
+
+            // Cursor Spotlight Effect (reused from main site)
+            const spotlight = document.querySelector('.cursor-spotlight');
+            let isMouseMoving = false;
+            let mouseTimeout;
+            
+            const supportsHover = window.matchMedia('(hover: hover)').matches;
+            
+            if (spotlight && supportsHover) {
+                document.addEventListener('mousemove', function(e) {
+                    const x = (e.clientX / window.innerWidth) * 100;
+                    const y = (e.clientY / window.innerHeight) * 100;
+                    
+                    spotlight.style.setProperty('--mouse-x', x + '%');
+                    spotlight.style.setProperty('--mouse-y', y + '%');
+                    
+                    if (!isMouseMoving) {
+                        spotlight.classList.add('active');
+                        isMouseMoving = true;
+                    }
+                    
+                    if (mouseTimeout) {
+                        clearTimeout(mouseTimeout);
+                    }
+                    
+                    mouseTimeout = setTimeout(() => {
+                        spotlight.classList.remove('active');
+                        isMouseMoving = false;
+                    }, 2000);
+                });
+                
+                document.addEventListener('mouseleave', function() {
+                    spotlight.classList.remove('active');
+                    isMouseMoving = false;
+                    if (mouseTimeout) {
+                        clearTimeout(mouseTimeout);
+                    }
+                });
+                
+                document.addEventListener('mouseenter', function() {
+                    spotlight.classList.add('active');
+                });
+            }
+
+            // Navbar scroll effect
+            let scrollTimeout;
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                
+                if (scrollTimeout) {
+                    clearTimeout(scrollTimeout);
+                }
+                
+                if (window.scrollY > 100) {
+                    navbar.style.background = 'rgba(0, 0, 0, 0.98)';
+                    navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+                } else {
+                    navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+                    navbar.style.boxShadow = 'none';
+                }
+                
+                scrollTimeout = setTimeout(() => {
+                    navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
