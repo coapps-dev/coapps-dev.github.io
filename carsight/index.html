@@ -85,11 +85,14 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .hero-content {
             flex: 1;
             min-width: 300px;
+            max-width: 600px;
         }
 
         .hero-images {
@@ -100,6 +103,24 @@
 
         /* Removed user rating section */
 
+        .hero-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            border-radius: 20px;
+            padding: 15px;
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3);
+        }
+        
+        .hero-logo img {
+            width: 100%;
+            height: auto;
+        }
+        
         .hero-title {
             font-size: 64px;
             font-weight: 700;
@@ -144,9 +165,13 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
-        .app-store-button img,
         .google-play-button img {
             height: 40px;
+            width: auto;
+        }
+        
+        .app-store-button img {
+            height: 44px;
             width: auto;
         }
 
@@ -285,14 +310,20 @@
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .hero {
                 flex-direction: column;
+                padding: 40px 0;
             }
             
             .hero-content {
                 text-align: center;
-                margin: 0 auto;
+                margin: 0 auto 60px;
+                max-width: 600px;
+            }
+            
+            .hero-logo {
+                margin: 0 auto 20px;
             }
             
             .hero-description {
@@ -305,17 +336,19 @@
             
             .phone-mockups {
                 height: 500px;
-                transform: scale(0.7);
                 margin: 0 auto;
+                position: relative;
+                transform: scale(0.85);
+                transform-origin: center top;
             }
             
             .phone-1 {
-                left: calc(50% - 280px);
+                left: calc(50% - 300px);
                 top: 50px;
             }
             
             .phone-2 {
-                left: calc(50% - 140px);
+                left: calc(50% - 150px);
                 top: 0;
             }
             
@@ -325,8 +358,41 @@
             }
             
             .phone-4 {
-                left: calc(50% + 140px);
+                left: calc(50% + 150px);
                 top: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 48px;
+            }
+            
+            .hero-subtitle {
+                font-size: 32px;
+            }
+            
+            .phone-mockups {
+                height: 800px;
+                transform: none;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 20px;
+                padding: 0 20px;
+            }
+            
+            .phone {
+                position: relative;
+                max-width: 100%;
+                left: auto;
+                top: auto;
+                margin: 0 auto;
+            }
+            
+            .phone-1, .phone-2, .phone-3, .phone-4 {
+                position: relative;
+                left: auto;
+                top: auto;
             }
         }
 
@@ -336,37 +402,32 @@
             }
             
             .hero-subtitle {
-                font-size: 28px;
+                font-size: 24px;
+            }
+            
+            .hero-description {
+                font-size: 16px;
             }
             
             .phone-mockups {
-                height: 400px;
-                transform: scale(0.5);
-                margin-top: 20px;
+                height: auto;
+                grid-template-columns: 1fr;
             }
             
             .phone {
-                max-width: 220px;
+                margin-bottom: 30px;
+                max-width: 280px;
             }
             
-            .phone-1 {
-                left: calc(50% - 220px);
-                top: 50px;
+            .app-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
             }
             
-            .phone-2 {
-                left: calc(50% - 110px);
-                top: 0;
-            }
-            
-            .phone-3 {
-                left: calc(50%);
-                top: 50px;
-            }
-            
-            .phone-4 {
-                left: calc(50% + 110px);
-                top: 0;
+            .app-store-button img, 
+            .google-play-button img {
+                height: 50px;
             }
         }
     </style>
@@ -384,6 +445,9 @@
 
         <section class="hero">
             <div class="hero-content">
+                <div class="hero-logo">
+                    <img src="/carro.png" alt="CarSight Logo">
+                </div>
                 <h1 class="hero-title">CarSight</h1>
                 <h2 class="hero-subtitle">Identify any car with just a picture</h2>
                 
