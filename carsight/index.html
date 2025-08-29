@@ -223,20 +223,27 @@
             position: relative;
             height: 600px;
             width: 100%;
+            display: flex;
+            justify-content: center;
         }
 
         .phone {
             position: absolute;
-            width: 280px;
+            max-width: 280px;
             border-radius: 40px;
-            overflow: hidden;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            overflow: visible;
+            transition: transform 0.3s ease;
+        }
+
+        .phone:hover {
+            transform: translateY(-10px);
         }
 
         .phone img {
             width: 100%;
             height: auto;
             display: block;
+            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
         }
 
         .phone-1 {
@@ -408,10 +415,29 @@
             }
             
             .phone-mockups {
-                height: 400px;
-                transform: scale(0.6);
-                transform-origin: center;
-                margin-top: -100px;
+                height: 500px;
+                transform: scale(0.7);
+                margin: 0 auto;
+            }
+            
+            .phone-1 {
+                left: calc(50% - 280px);
+                top: 50px;
+            }
+            
+            .phone-2 {
+                left: calc(50% - 140px);
+                top: 0;
+            }
+            
+            .phone-3 {
+                left: calc(50%);
+                top: 50px;
+            }
+            
+            .phone-4 {
+                left: calc(50% + 140px);
+                top: 0;
             }
         }
 
@@ -425,9 +451,33 @@
             }
             
             .phone-mockups {
-                height: 300px;
+                height: 400px;
                 transform: scale(0.5);
-                margin-top: -150px;
+                margin-top: 20px;
+            }
+            
+            .phone {
+                max-width: 220px;
+            }
+            
+            .phone-1 {
+                left: calc(50% - 220px);
+                top: 50px;
+            }
+            
+            .phone-2 {
+                left: calc(50% - 110px);
+                top: 0;
+            }
+            
+            .phone-3 {
+                left: calc(50%);
+                top: 50px;
+            }
+            
+            .phone-4 {
+                left: calc(50% + 110px);
+                top: 0;
             }
         }
     </style>
@@ -483,16 +533,16 @@
             <div class="hero-images">
                 <div class="phone-mockups">
                     <div class="phone phone-1">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjU2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjgwIiBoZWlnaHQ9IjU2MCIgZmlsbD0iIzE2MjEzZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Q2FyU2lnaHQgQXBwPC90ZXh0Pjwvc3ZnPg==" alt="CarSight App Screenshot">
+                        <img src="/3.png" alt="CarSight Home Screen">
                     </div>
                     <div class="phone phone-2">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjU2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjgwIiBoZWlnaHQ9IjU2MCIgZmlsbD0iIzE2MjEzZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+U25hcCAmIERldGVjdDwvdGV4dD48L3N2Zz4=" alt="CarSight App Screenshot">
+                        <img src="/4.png" alt="CarSight Details Screen">
                     </div>
                     <div class="phone phone-3">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjU2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjgwIiBoZWlnaHQ9IjU2MCIgZmlsbD0iIzE2MjEzZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+RGlnaXRhbCBHYXJhZ2U8L3RleHQ+PC9zdmc+" alt="CarSight App Screenshot">
+                        <img src="/1.png" alt="CarSight Digital Garage">
                     </div>
                     <div class="phone phone-4">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjU2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjgwIiBoZWlnaHQ9IjU2MCIgZmlsbD0iIzE2MjEzZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Q2FyIE1hcDwvdGV4dD48L3N2Zz4=" alt="CarSight App Screenshot">
+                        <img src="/2.png" alt="CarSight Car Map">
                     </div>
                 </div>
             </div>
