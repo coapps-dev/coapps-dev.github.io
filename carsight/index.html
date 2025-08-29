@@ -41,6 +41,7 @@
             color: #ffffff;
             min-height: 100vh;
             overflow-x: hidden;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233b82f6' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
         .container {
@@ -98,37 +99,33 @@
             position: relative;
         }
 
-        .user-rating {
+        .app-badge {
             display: flex;
             align-items: center;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
-            padding: 8px 16px;
+            border-radius: 8px;
+            padding: 10px 16px;
             margin-bottom: 24px;
             width: fit-content;
+            border-left: 4px solid #ff3b30;
         }
 
-        .user-avatars {
-            display: flex;
+        .badge-icon {
             margin-right: 12px;
+            color: #ff3b30;
+            font-size: 18px;
         }
 
-        .user-avatar {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            border: 2px solid #1a1a2e;
-            margin-right: -8px;
-            background: #3b82f6;
-        }
-
-        .rating-text {
+        .badge-text {
             font-size: 14px;
-            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .rating-stars {
-            color: #ffd700;
+        .badge-highlight {
+            color: #ff3b30;
             margin-left: 4px;
         }
 
@@ -144,7 +141,7 @@
             font-weight: 700;
             margin-bottom: 24px;
             line-height: 1.2;
-            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            background: linear-gradient(90deg, #ff3b30, #ff9500);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -210,7 +207,7 @@
             position: absolute;
             top: -10px;
             right: -10px;
-            background: #3b82f6;
+            background: #ff3b30;
             color: #fff;
             font-size: 10px;
             padding: 4px 8px;
@@ -273,6 +270,7 @@
         /* Features Section */
         .features {
             padding: 100px 0;
+            text-align: center;
         }
 
         .section-title {
@@ -280,6 +278,21 @@
             font-weight: 700;
             margin-bottom: 60px;
             text-align: center;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff3b30, #ff9500);
+            border-radius: 2px;
         }
 
         .features-grid {
@@ -302,12 +315,13 @@
         .feature-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-            border-radius: 16px;
+            background: linear-gradient(135deg, #ff3b30 0%, #ff9500 100%);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 24px;
+            box-shadow: 0 10px 20px rgba(255, 59, 48, 0.3);
         }
 
         .feature-icon svg {
@@ -495,21 +509,16 @@
 
         <section class="hero">
             <div class="hero-content">
-                <div class="user-rating">
-                    <div class="user-avatars">
-                        <div class="user-avatar"></div>
-                        <div class="user-avatar"></div>
-                        <div class="user-avatar"></div>
-                    </div>
-                    <span class="rating-text">Loved by car enthusiasts</span>
-                    <span class="rating-stars">★★★★★</span>
+                <div class="app-badge">
+                    <span class="badge-icon">🏎️</span>
+                    <span class="badge-text">Powered by <span class="badge-highlight">Automotive AI</span></span>
                 </div>
                 
-                <h1 class="hero-title">Meet CarSight</h1>
-                <h2 class="hero-subtitle">Identify any car with just a picture</h2>
+                <h1 class="hero-title">Spot. Identify. Collect.</h1>
+                <h2 class="hero-subtitle">Your Ultimate Car Spotter Companion</h2>
                 
                 <p class="hero-description">
-                    CarSight is the AI-powered app for car enthusiasts. Snap a photo, scan a car, or browse your digital garage to track your favorite vehicles.
+                    Built for true automotive enthusiasts, CarSight uses advanced AI to instantly identify any vehicle you encounter, from rare classics to the latest supercars.
                 </p>
                 
                 <div class="app-buttons">
@@ -536,10 +545,10 @@
                         <img src="/3.png" alt="CarSight Home Screen">
                     </div>
                     <div class="phone phone-2">
-                        <img src="/4.png" alt="CarSight Details Screen">
+                        <img src="/1.png" alt="CarSight Details Screen">
                     </div>
                     <div class="phone phone-3">
-                        <img src="/1.png" alt="CarSight Digital Garage">
+                        <img src="/4.png" alt="CarSight Digital Garage">
                     </div>
                     <div class="phone phone-4">
                         <img src="/2.png" alt="CarSight Car Map">
@@ -549,16 +558,16 @@
         </section>
 
         <section class="features">
-            <h2 class="section-title">Key Features</h2>
+            <h2 class="section-title">For Serious Car Enthusiasts</h2>
             
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>
                     </div>
-                    <h3 class="feature-title">AI-Powered Recognition</h3>
+                    <h3 class="feature-title">Precision Recognition</h3>
                     <p class="feature-description">
-                        Our advanced AI can identify make, model, year, and even rare editions of vehicles from just a single photo.
+                        Instantly identify any make, model, year, and even rare limited editions with our specialized automotive neural network.
                     </p>
                 </div>
                 
@@ -566,9 +575,9 @@
                     <div class="feature-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
                     </div>
-                    <h3 class="feature-title">Snap & Detect</h3>
+                    <h3 class="feature-title">Street Spotting</h3>
                     <p class="feature-description">
-                        Take a photo or use an existing image to instantly identify any car with detailed specifications and information.
+                        Capture any vehicle on the go and get detailed specs, performance data, market values, and rarity scores in seconds.
                     </p>
                 </div>
                 
@@ -576,9 +585,9 @@
                     <div class="feature-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                     </div>
-                    <h3 class="feature-title">Digital Garage</h3>
+                    <h3 class="feature-title">Virtual Collection</h3>
                     <p class="feature-description">
-                        Build your personal collection of favorite cars, track specifications, and share with other enthusiasts.
+                        Build your dream garage with vehicles you've spotted. Track specs, compare performance stats, and share your rare finds.
                     </p>
                 </div>
                 
@@ -586,9 +595,9 @@
                     <div class="feature-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
                     </div>
-                    <h3 class="feature-title">Car Map</h3>
+                    <h3 class="feature-title">Spotter's Map</h3>
                     <p class="feature-description">
-                        Discover and locate interesting vehicles around you with our interactive map feature for car spotters.
+                        Discover exotic and rare vehicles in your area with our community-powered map. Never miss a noteworthy car again.
                     </p>
                 </div>
             </div>
