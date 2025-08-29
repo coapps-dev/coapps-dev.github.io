@@ -132,41 +132,22 @@
             flex-wrap: wrap;
         }
 
-        .app-button {
-            display: flex;
-            align-items: center;
-            background: #000;
-            border-radius: 12px;
-            padding: 12px 24px;
-            text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .app-store-button,
+        .google-play-button {
+            display: inline-block;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .app-button:hover {
+        .app-store-button:hover,
+        .google-play-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
-        .app-button img {
-            height: 24px;
-            margin-right: 8px;
-        }
-
-        .app-button-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .app-button-text small {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .app-button-text span {
-            font-size: 16px;
-            font-weight: 500;
-            color: #ffffff;
+        .app-store-button img,
+        .google-play-button img {
+            height: 40px;
+            width: auto;
         }
 
         .coming-soon {
@@ -238,63 +219,7 @@
             z-index: 2;
         }
 
-        /* Features Section */
-        .features {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 60px;
-            text-align: center;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 40px 30px;
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-        }
-
-        .feature-icon svg {
-            width: 30px;
-            height: 30px;
-            color: #ffffff;
-        }
-
-        .feature-title {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-
-        .feature-description {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.6;
-        }
+        /* Features Section removed */
 
         /* Footer */
         footer {
@@ -467,19 +392,11 @@
                 </p>
                 
                 <div class="app-buttons">
-                    <a href="#" class="app-button">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDM4NCA1MTIiIGZpbGw9IndoaXRlIj48cGF0aCBkPSJNMzE4LjcgMjY4LjdjLS4yLTM2LjcgMTYuNC02NC40IDUwLTg0LjgtMTguOC0yNi45LTQ3LjItNDEuNy04NC43LTQ0LjYtMzUuNS0yLjgtNzQgMjAuNy03NC4xIDIwLjhDMTc1IDEyNi4zIDE0MiAxMDQgOTkuOCAxMDRjLTQ5LjkgMy0xMDAuNiA0NC42LTkzLjkgMTA2LjkgNi45IDYzLjQgNTIuNCAyMjcuNCAxMDQuMyAyMjcuNCAyMS4yLS4xIDI2LjEtMTYuMiA2OS4yLTE2LjIgNDIuOSAwIDQ1LjIgMTYuMSA2OS4xIDE2LjEgNDguNy0uMSA5MC44LTE4NS4zIDkxLjQtMTg2LjkgMC0uMS0xOS40LTguMi0xOS41LTguM3oiPjwvcGF0aD48cGF0aCBkPSJNMjY3LjUgMGMtNDkuOSAyLjUtODguNCA0MS4zLTkzLjYgODcuNCA0MiAxIC4xIDEuNSA0NS4yIDIuMSA0LjgtNTIgNDguMi04Ny4zIDQ4LjQtODkuNXoiPjwvcGF0aD48L3N2Zz4=" alt="Apple Logo">
-                        <div class="app-button-text">
-                            <small>Download on the</small>
-                            <span>App Store</span>
-                        </div>
+                    <a href="#" class="app-store-button">
+                        <img src="/apple-button.jpg" alt="Download on the App Store">
                     </a>
-                    <a href="#" class="app-button coming-soon">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9ImZlYXRoZXIgZmVhdGhlci1wbGF5Ij48cG9seWdvbiBwb2ludHM9IjUgMyAxOSAxMiA1IDIxIDUgMyI+PC9wb2x5Z29uPjwvc3ZnPg==" alt="Google Play Logo">
-                        <div class="app-button-text">
-                            <small>GET IT ON</small>
-                            <span>Google Play</span>
-                        </div>
+                    <a href="#" class="google-play-button coming-soon">
+                        <img src="/google-button.png" alt="Get it on Google Play">
                     </a>
                 </div>
             </div>
@@ -502,51 +419,7 @@
             </div>
         </section>
 
-        <section class="features">
-            <h2 class="section-title">Key Features</h2>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>
-                    </div>
-                    <h3 class="feature-title">AI-Powered Recognition</h3>
-                    <p class="feature-description">
-                        Our advanced AI can identify make, model, year, and even rare editions of vehicles from just a single photo.
-                    </p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-                    </div>
-                    <h3 class="feature-title">Snap & Detect</h3>
-                    <p class="feature-description">
-                        Take a photo or use an existing image to instantly identify any car with detailed specifications and information.
-                    </p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                    </div>
-                    <h3 class="feature-title">Digital Garage</h3>
-                    <p class="feature-description">
-                        Build your personal collection of favorite cars, track specifications, and share with other enthusiasts.
-                    </p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
-                    </div>
-                    <h3 class="feature-title">Car Map</h3>
-                    <p class="feature-description">
-                        Discover and locate interesting vehicles around you with our interactive map feature for car spotters.
-                    </p>
-                </div>
-            </div>
-        </section>
+        <!-- Features section removed as requested -->
     </div>
     
     <footer>
