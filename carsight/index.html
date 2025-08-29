@@ -93,6 +93,7 @@
             flex: 1;
             min-width: 300px;
             max-width: 600px;
+            text-align: left;
         }
 
         .hero-images {
@@ -106,19 +107,16 @@
         .hero-logo {
             width: 80px;
             height: 80px;
-            margin: 0 auto 20px;
+            margin: 0 0 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-            border-radius: 20px;
-            padding: 15px;
-            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3);
         }
         
         .hero-logo img {
             width: 100%;
             height: auto;
+            border-radius: 16px;
         }
         
         .hero-title {
@@ -195,7 +193,7 @@
         /* Phone mockups */
         .phone-mockups {
             position: relative;
-            height: 600px;
+            height: 500px;
             width: 100%;
             display: flex;
             justify-content: center;
@@ -203,7 +201,7 @@
 
         .phone {
             position: absolute;
-            max-width: 280px;
+            max-width: 220px;
             border-radius: 40px;
             overflow: visible;
             transition: transform 0.3s ease;
@@ -217,7 +215,7 @@
             width: 100%;
             height: auto;
             display: block;
-            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
         }
 
         .phone-1 {
@@ -234,13 +232,13 @@
 
         .phone-3 {
             left: 240px;
-            top: 100px;
+            top: 50px;
             z-index: 1;
         }
 
         .phone-4 {
             left: 360px;
-            top: 50px;
+            top: 0;
             z-index: 2;
         }
 
@@ -372,21 +370,33 @@
                 font-size: 32px;
             }
             
+            .hero-content {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            
+            .hero-logo {
+                margin: 0 auto 20px;
+            }
+            
             .phone-mockups {
-                height: 800px;
+                height: auto;
                 transform: none;
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-gap: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
                 padding: 0 20px;
+                margin-bottom: 60px;
             }
             
             .phone {
                 position: relative;
-                max-width: 100%;
+                width: 45%;
+                max-width: 200px;
                 left: auto;
                 top: auto;
-                margin: 0 auto;
+                margin: 0;
             }
             
             .phone-1, .phone-2, .phone-3, .phone-4 {
@@ -410,13 +420,12 @@
             }
             
             .phone-mockups {
-                height: auto;
-                grid-template-columns: 1fr;
+                margin-bottom: 40px;
             }
             
             .phone {
-                margin-bottom: 30px;
-                max-width: 280px;
+                width: 48%;
+                max-width: 160px;
             }
             
             .app-buttons {
@@ -428,6 +437,11 @@
             .app-store-button img, 
             .google-play-button img {
                 height: 50px;
+            }
+            
+            footer {
+                margin-top: 0;
+                padding: 30px 0;
             }
         }
     </style>
