@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — CarBot</title>
+    <meta name="description" content="CarBot Terms of Service - Legal terms and conditions for using our AI-powered car recognition app.">
+    <link rel="icon" type="image/png" href="/carro.png">
+    
+    <style>
+        @font-face {
+            font-family: 'Sora';
+            src: url('/fonts/Sora/static/Sora-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Sora';
+            src: url('/fonts/Sora/static/Sora-Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Sora';
+            src: url('/fonts/Sora/static/Sora-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 30px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #ffffff;
+        }
+
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .page-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .last-updated {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 40px;
+            font-size: 14px;
+            color: #60a5fa;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: #ffffff;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 40px 0 20px 0;
+            color: #ffffff;
+            border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 32px 0 16px 0;
+            color: #60a5fa;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: 500;
+            margin: 24px 0 12px 0;
+            color: #ffffff;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        ul, ol {
+            margin: 16px 0 16px 24px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .definition-list {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .important-notice {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .important-notice h3 {
+            margin-top: 0;
+            color: #f87171;
+        }
+
+        .contact-info {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .contact-info h3 {
+            margin-top: 0;
+            color: #60a5fa;
+        }
+
+        .contact-info a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: rgba(0, 0, 0, 0.3);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-logo img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #ffffff;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .page-title {
+                font-size: 36px;
+            }
+
+            .content {
+                padding: 24px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <a href="/carbot/" class="logo">
+                    <img src="/carro.png" alt="CarBot Logo">
+                    <span class="logo-text">CarBot</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="/carbot/" class="nav-link">Home</a>
+                    <a href="/carbot/privacy.html" class="nav-link">Privacy</a>
+                    <a href="/carbot/terms.html" class="nav-link">Terms</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="page-header">
+                <h1 class="page-title">Terms of Service</h1>
+                <p class="page-subtitle">
+                    Please read these terms carefully before using CarBot. By using our service, you agree to be bound by these terms.
+                </p>
+            </div>
+
+            <div class="content">
+                <div class="last-updated">
+                    <strong>Last updated:</strong> January 15, 2025
+                </div>
+
+                <p>These Terms of Service ("Terms", "Terms of Service") govern Your relationship with CarBot mobile application (the "Service") operated by CoApps Development LLC ("Us", "We", or "Our").</p>
+
+                <p>Please read these Terms of Service carefully before using Our Service.</p>
+
+                <p>Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service.</p>
+
+                <p>By accessing or using the Service You agree to be bound by these Terms. If You disagree with any part of these terms then You may not access the Service.</p>
+
+                <h2>Interpretation and Definitions</h2>
+
+                <h3>Interpretation</h3>
+                <p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
+
+                <h3>Definitions</h3>
+                <div class="definition-list">
+                    <p>For the purposes of these Terms of Service:</p>
+                    <ul>
+                        <li><strong>Application</strong> refers to CarBot, the software program provided by the Company downloaded by You on any electronic device, including but not limited to mobile phones and tablets.</li>
+                        <li><strong>Application Store</strong> means the digital distribution service operated and developed by Apple Inc. (Apple App Store) or Google Inc. (Google Play Store) in which the Application has been downloaded.</li>
+                        <li><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</li>
+                        <li><strong>Account</strong> means a unique account created for You to access our Service or parts of our Service.</li>
+                        <li><strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to CoApps Development LLC.</li>
+                        <li><strong>Content</strong> refers to content such as text, images, or other information that can be posted, uploaded, linked to or otherwise made available by You, regardless of the form of that content.</li>
+                        <li><strong>Country</strong> refers to: United States</li>
+                        <li><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</li>
+                        <li><strong>Feedback</strong> means feedback, innovations or suggestions sent by You regarding the attributes, performance or features of our Service.</li>
+                        <li><strong>Service</strong> refers to the Application.</li>
+                        <li><strong>Terms of Service</strong> (also referred as "Terms") mean these Terms of Service that form the entire agreement between You and the Company regarding the use of the Service.</li>
+                        <li><strong>Third-party Social Media Service</strong> means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.</li>
+                        <li><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</li>
+                    </ul>
+                </div>
+
+                <h2>Acknowledgment</h2>
+                <p>These are the Terms of Service governing the use of this Service and the agreement that operates between You and the Company. These Terms of Service set out the rights and obligations of all users regarding the use of the Service.</p>
+
+                <p>Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms of Service. These Terms of Service apply to all visitors, users and others who access or use the Service.</p>
+
+                <p>By accessing or using the Service You agree to be bound by these Terms of Service. If You disagree with any part of these Terms of Service then You may not access the Service.</p>
+
+                <p>You represent that you are over the age of 18. The Company does not permit those under 18 to use the Service.</p>
+
+                <p>Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.</p>
+
+                <h2>User Accounts</h2>
+                <p>When You create an account with Us, You must provide information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of Your account on Our Service.</p>
+
+                <p>You are responsible for safeguarding the password that You use to access the Service and for all activities that occur under Your account and password. You agree not to disclose Your password to any third party. You must notify Us immediately upon becoming aware of any breach of security or unauthorized use of Your account.</p>
+
+                <p>You may not use as a username the name of another person or entity or that is not lawfully available for use, a name or trademark that is subject to any rights of another person or entity other than You without appropriate authorization, or a name that is otherwise offensive, vulgar or obscene.</p>
+
+                <h2>Use of the Service</h2>
+
+                <h3>AI-Powered Car Recognition</h3>
+                <p>CarBot provides artificial intelligence-powered car recognition services that analyze images you upload or capture to identify vehicle make, model, year, and other characteristics. While we strive for accuracy, AI recognition results are provided "as is" and may not always be completely accurate. You acknowledge that:</p>
+                <ul>
+                    <li>AI recognition results are estimates and may contain errors</li>
+                    <li>The Service should not be relied upon for professional, commercial, or legal purposes without independent verification</li>
+                    <li>Recognition accuracy may vary based on image quality, lighting conditions, and other factors</li>
+                    <li>We continuously improve our AI algorithms, but cannot guarantee perfect accuracy</li>
+                </ul>
+
+                <h3>Personal Garage and Social Features</h3>
+                <p>The Service allows you to:</p>
+                <ul>
+                    <li>Create and maintain a personal garage of identified vehicles</li>
+                    <li>Connect with friends who also use the Service</li>
+                    <li>Share your car spots and discoveries with your network</li>
+                    <li>View and interact with content shared by friends</li>
+                    <li>Participate in car enthusiast communities</li>
+                </ul>
+
+                <p>When using social features, you agree to:</p>
+                <ul>
+                    <li>Respect other users' privacy and rights</li>
+                    <li>Not share inappropriate, offensive, or illegal content</li>
+                    <li>Not impersonate others or create fake accounts</li>
+                    <li>Comply with all applicable laws and regulations</li>
+                </ul>
+
+                <h3>Acceptable Use</h3>
+                <p>You agree to use the Service only for lawful purposes and in accordance with these Terms. You agree not to use the Service:</p>
+                <ul>
+                    <li>In any way that violates any applicable federal, state, local, or international law or regulation</li>
+                    <li>To transmit, or procure the sending of, any advertising or promotional material, or any other form of similar solicitation (spam)</li>
+                    <li>To impersonate or attempt to impersonate the Company, a Company employee, another user, or any other person or entity</li>
+                    <li>To engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the Service</li>
+                    <li>To upload, post, or share content that is illegal, harmful, threatening, abusive, harassing, defamatory, vulgar, obscene, or otherwise objectionable</li>
+                    <li>To attempt to gain unauthorized access to, interfere with, damage, or disrupt any parts of the Service</li>
+                    <li>To use the Service for any commercial purpose without our express written consent</li>
+                </ul>
+
+                <h2>Content</h2>
+
+                <h3>Your Content</h3>
+                <p>Our Service allows you to post, link, store, share and otherwise make available certain information, text, graphics, videos, or other material ("Content"). You are responsible for the Content that you post to the Service, including its legality, reliability, and appropriateness.</p>
+
+                <p>By posting Content to the Service, You grant Us the right and license to use, modify, publicly perform, publicly display, reproduce, and distribute such Content on and through the Service. You retain any and all of your rights to any Content you submit, post or display on or through the Service and you are responsible for protecting those rights.</p>
+
+                <p>You represent and warrant that:</p>
+                <ul>
+                    <li>The Content is yours (you own it) or you have the right to use it and grant us the rights and license as provided in these Terms</li>
+                    <li>You have the full authority to act on behalf of any and all owners of any right, title or interest in and to any Content that you post</li>
+                    <li>Your use of the Content does not infringe, violate or misappropriate the rights of any third party</li>
+                </ul>
+
+                <h3>Prohibited Content</h3>
+                <p>You may not upload, post, or share Content that:</p>
+                <ul>
+                    <li>Is illegal, harmful, threatening, abusive, harassing, tortious, defamatory, vulgar, obscene, libelous, invasive of another's privacy, hateful, or racially, ethnically or otherwise objectionable</li>
+                    <li>Infringes any patent, trademark, trade secret, copyright, or other intellectual property or other rights of any other person</li>
+                    <li>Contains software viruses or any other computer code, files, or programs designed to interrupt, destroy, or limit the functionality of any computer software or hardware</li>
+                    <li>Promotes illegal or harmful activities or substances</li>
+                    <li>Contains personal information of others without their consent</li>
+                </ul>
+
+                <h2>Intellectual Property Rights</h2>
+                <p>The Service and its original content (excluding Content provided by You or other users), features and functionality are and will remain the exclusive property of the Company and its licensors.</p>
+
+                <p>The Service is protected by copyright, trademark, and other laws of both the Country and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without our prior written consent.</p>
+
+                <p>You acknowledge and agree that any feedback, comments, or suggestions you may provide regarding the Service ("Feedback") will be the sole and exclusive property of the Company and you hereby irrevocably assign to the Company all of your right, title, and interest in and to all Feedback.</p>
+
+                <h2>Privacy and Data Protection</h2>
+                <p>Your privacy is important to us. Please review our Privacy Policy, which also governs your use of the Service, to understand our practices.</p>
+
+                <p>By using the Service, you consent to the collection, use, and sharing of your information as described in our Privacy Policy, including:</p>
+                <ul>
+                    <li>Images and photos you upload for AI recognition</li>
+                    <li>Recognition results and metadata</li>
+                    <li>Social connections and interactions</li>
+                    <li>Location data when using camera features</li>
+                    <li>Usage data and analytics</li>
+                </ul>
+
+                <h2>Termination</h2>
+                <p>We may terminate or suspend Your Account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach the Terms.</p>
+
+                <p>Upon termination, Your right to use the Service will cease immediately. If You wish to terminate Your Account, You may simply discontinue using the Service or contact us to request account deletion.</p>
+
+                <p>Upon termination:</p>
+                <ul>
+                    <li>Your access to the Service will be immediately revoked</li>
+                    <li>Your personal garage and social connections will be deleted</li>
+                    <li>Any Content you have shared may remain visible to other users unless specifically deleted</li>
+                    <li>We may retain certain information as required by law or for legitimate business purposes</li>
+                </ul>
+
+                <h2>Disclaimer of Warranties</h2>
+                <div class="important-notice">
+                    <h3>Important Legal Notice</h3>
+                    <p>THE INFORMATION, SOFTWARE, PRODUCTS, AND SERVICES INCLUDED IN OR AVAILABLE THROUGH THE SERVICE MAY INCLUDE INACCURACIES OR TYPOGRAPHICAL ERRORS. CHANGES ARE PERIODICALLY ADDED TO THE INFORMATION HEREIN. THE COMPANY AND/OR ITS SUPPLIERS MAY MAKE IMPROVEMENTS AND/OR CHANGES IN THE SERVICE AT ANY TIME.</p>
+                </div>
+
+                <p>THE SERVICE IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS. THE COMPANY AND ITS SUPPLIERS AND LICENSORS HEREBY DISCLAIM ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT, AND FITNESS FOR PARTICULAR PURPOSE.</p>
+
+                <p>THE ENTIRE RISK ARISING OUT OF USE OR PERFORMANCE OF THE SERVICE REMAINS WITH YOU. IN NO EVENT SHALL THE COMPANY OR ITS SUPPLIERS BE LIABLE FOR ANY DAMAGES WHATSOEVER.</p>
+
+                <h2>Limitation of Liability</h2>
+                <p>IN NO EVENT SHALL THE COMPANY, NOR ITS DIRECTORS, EMPLOYEES, PARTNERS, AGENTS, SUPPLIERS, OR AFFILIATES, BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM YOUR USE OF THE SERVICE.</p>
+
+                <p>IN NO EVENT SHALL THE COMPANY'S TOTAL LIABILITY TO YOU FOR ALL DAMAGES, LOSSES, AND CAUSES OF ACTION EXCEED THE AMOUNT YOU HAVE PAID THE COMPANY IN THE LAST SIX (6) MONTHS, OR ONE HUNDRED DOLLARS ($100), WHICHEVER IS LESS.</p>
+
+                <h2>Governing Law</h2>
+                <p>The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws.</p>
+
+                <h2>Disputes Resolution</h2>
+                <p>If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company.</p>
+
+                <h2>For European Union (EU) Users</h2>
+                <p>If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident in.</p>
+
+                <h2>United States Legal Compliance</h2>
+                <p>You represent and warrant that (i) You are not located in a country that is subject to the United States government embargo, or that has been designated by the United States government as a "terrorist supporting" country, and (ii) You are not listed on any United States government list of prohibited or restricted parties.</p>
+
+                <h2>Severability and Waiver</h2>
+
+                <h3>Severability</h3>
+                <p>If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.</p>
+
+                <h3>Waiver</h3>
+                <p>Except as provided herein, the failure to exercise a right or to require performance of an obligation under this Terms shall not effect a party's ability to exercise such right or require such performance at any time thereafter nor shall be the waiver of a breach constitute a waiver of any subsequent breach.</p>
+
+                <h2>Translation Interpretation</h2>
+                <p>These Terms of Service may have been translated if We have made them available to You on our Service. You agree that the original English text shall prevail in the case of a conflict.</p>
+
+                <h2>Changes to These Terms of Service</h2>
+                <p>We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion.</p>
+
+                <p>By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.</p>
+
+                <div class="contact-info">
+                    <h3>Contact Us</h3>
+                    <p>If you have any questions about these Terms of Service, You can contact us:</p>
+                    <ul>
+                        <li>By email: <a href="mailto:legal@carbot.app">legal@carbot.app</a></li>
+                        <li>By visiting our support page: <a href="/carbot/">carbot.app/support</a></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="/carro.png" alt="CarBot Logo">
+                    <span class="logo-text">CarBot</span>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="/carbot/" class="footer-link">Home</a>
+                    <a href="/carbot/privacy.html" class="footer-link">Privacy Policy</a>
+                    <a href="/carbot/terms.html" class="footer-link">Terms of Service</a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 CarBot. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
