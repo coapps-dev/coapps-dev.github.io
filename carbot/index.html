@@ -7,12 +7,6 @@
     <meta name="description" content="CarBot: AI-powered car recognition app for car enthusiasts. Identify any car with just a picture.">
     <link rel="icon" type="image/png" href="/carro.png">
     
-    <!-- Preload critical iPhone mockup images -->
-    <link rel="preload" as="image" href="/1.png" fetchpriority="high">
-    <link rel="preload" as="image" href="/2.png" fetchpriority="high">
-    <link rel="preload" as="image" href="/3.png" fetchpriority="high">
-    <link rel="preload" as="image" href="/4.png" fetchpriority="high">
-    
     <style>
         @font-face {
             font-family: 'Sora';
@@ -213,10 +207,6 @@
             width: 100%;
             display: flex;
             justify-content: center;
-            /* Prevent layout shift during image loading */
-            contain: layout style paint;
-            /* Ensure container is ready immediately */
-            min-height: 500px;
         }
 
         .phone {
@@ -236,26 +226,6 @@
             height: auto;
             display: block;
             filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
-            /* Optimize for immediate rendering */
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-            /* Prevent layout shift with aspect ratio */
-            aspect-ratio: 9/19.5;
-            object-fit: contain;
-            /* Ensure images are rendered immediately */
-            will-change: transform;
-            backface-visibility: hidden;
-            transform: translateZ(0);
-            /* Loading placeholder background */
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
-            /* Smooth transition when image loads */
-            transition: opacity 0.3s ease;
-        }
-        
-        /* Loading state */
-        .phone img:not([src]) {
-            opacity: 0.7;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
         }
 
         .phone-1 {
@@ -533,16 +503,16 @@
             <div class="hero-images">
                 <div class="phone-mockups">
                     <div class="phone phone-1">
-                        <img src="/3.png" alt="CarBot Home Screen" fetchpriority="high" loading="eager" decoding="sync">
+                        <img src="/3.png" alt="CarBot Home Screen">
                     </div>
                     <div class="phone phone-2">
-                        <img src="/1.png" alt="CarBot Details Screen" fetchpriority="high" loading="eager" decoding="sync">
+                        <img src="/1.png" alt="CarBot Details Screen">
                     </div>
                     <div class="phone phone-3">
-                        <img src="/4.png" alt="CarBot Digital Garage" fetchpriority="high" loading="eager" decoding="sync">
+                        <img src="/4.png" alt="CarBot Digital Garage">
                     </div>
                     <div class="phone phone-4">
-                        <img src="/2.png" alt="CarBot Car Map" fetchpriority="high" loading="eager" decoding="sync">
+                        <img src="/2.png" alt="CarBot Car Map">
                     </div>
                 </div>
             </div>
@@ -570,42 +540,5 @@
             </div>
         </div>
     </footer>
-    
-    <script>
-        // Immediate image loading optimization
-        document.addEventListener('DOMContentLoaded', function() {
-            // Force immediate loading of iPhone images
-            const phoneImages = document.querySelectorAll('.phone img');
-            phoneImages.forEach(img => {
-                // Create a new image to preload and cache
-                const preloadImg = new Image();
-                preloadImg.onload = function() {
-                    img.style.opacity = '1';
-                };
-                preloadImg.src = img.src;
-                
-                // Set loading state
-                img.style.opacity = '0.8';
-                
-                // Force decode for immediate display
-                if (img.decode) {
-                    img.decode().then(() => {
-                        img.style.opacity = '1';
-                    }).catch(() => {
-                        img.style.opacity = '1';
-                    });
-                }
-            });
-        });
-        
-        // Additional optimization: preload images on page load
-        window.addEventListener('load', function() {
-            const imagesToPreload = ['/1.png', '/2.png', '/3.png', '/4.png'];
-            imagesToPreload.forEach(src => {
-                const img = new Image();
-                img.src = src;
-            });
-        });
-    </script>
 </body>
 </html>
