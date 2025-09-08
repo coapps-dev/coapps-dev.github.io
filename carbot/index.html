@@ -7,12 +7,18 @@
     <meta name="description" content="CarBot: AI-powered car recognition app for car enthusiasts. Identify any car with just a picture.">
     <link rel="icon" type="image/png" href="/carro.png">
     
+    <!-- Preload Sora fonts for better loading -->
+    <link rel="preload" href="/fonts/Sora/static/Sora-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/fonts/Sora/static/Sora-Medium.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/fonts/Sora/static/Sora-Bold.ttf" as="font" type="font/ttf" crossorigin>
+    
     <style>
         @font-face {
             font-family: 'Sora';
             src: url('/fonts/Sora/static/Sora-Regular.ttf') format('truetype');
             font-weight: 400;
             font-style: normal;
+            font-display: swap;
         }
         
         @font-face {
@@ -20,6 +26,7 @@
             src: url('/fonts/Sora/static/Sora-Medium.ttf') format('truetype');
             font-weight: 500;
             font-style: normal;
+            font-display: swap;
         }
         
         @font-face {
@@ -27,6 +34,7 @@
             src: url('/fonts/Sora/static/Sora-Bold.ttf') format('truetype');
             font-weight: 700;
             font-style: normal;
+            font-display: swap;
         }
 
         * {
@@ -487,7 +495,7 @@
                 <h2 class="hero-subtitle">Identify any car with just a photo</h2>
                 
                 <p class="hero-description">
-                    CarBot is the AI-powered app for car enthusiasts. Snap a photo, scan a car, or browse your digital garage to track your favorite vehicles.
+                    CarBot is the AI-powered app for car enthusiasts. Snap a photo, scan a car, and browse your digital garage to track your favorite vehicles.
                 </p>
                 
                 <div class="app-buttons">
