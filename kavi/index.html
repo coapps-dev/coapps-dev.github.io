@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAVI — News. Redefined.</title>
+    <meta name="description" content="KAVI — News. Redefined. Coming Soon.">
+    <link rel="canonical" href="https://co-apps.com/kavi">
+    <meta property="og:title" content="KAVI — News. Redefined.">
+    <meta property="og:description" content="KAVI is coming soon.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://co-apps.com/kavi">
+    <meta name="theme-color" content="#5c39b0">
+    <style>
+        /* Manrope local font */
+        @font-face {
+            font-family: 'Manrope';
+            src: url('/fonts/Manrope/Manrope-VariableFont_wght.ttf') format('truetype');
+            font-weight: 100 800;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Manrope';
+            src: url('/fonts/Manrope/static/Manrope-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --kavi-purple: #5c39b0; /* primary purple */
+            --kavi-deep: #201b4d;   /* deep space purple */
+            --kavi-gold: #f2b24b;   /* warm gold */
+            --text: #ffffff;
+        }
+
+        html, body {
+            height: 100%;
+        }
+        body {
+            margin: 0;
+            font-family: 'Manrope', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text);
+            background: radial-gradient(90vw 90vw at 15% 10%, rgba(32,27,77,0.85), rgba(32,27,77,0.1) 60%, transparent 70%),
+                        linear-gradient(135deg, var(--kavi-purple) 0%, #6f48c7 35%, #8a5de2 55%, var(--kavi-gold) 100%);
+            background-attachment: fixed;
+        }
+
+        .wrap {
+            min-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            padding: 48px 24px;
+        }
+
+        .card {
+            max-width: 720px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+        .brand img {
+            height: 48px;
+            width: auto;
+            display: block;
+            filter: drop-shadow(0 6px 16px rgba(0,0,0,0.25));
+        }
+
+        h1 {
+            margin: 0 0 10px 0;
+            font-weight: 700;
+            line-height: 1.08;
+            letter-spacing: -0.02em;
+            font-size: clamp(40px, 6vw, 80px);
+        }
+        .muted {
+            margin-top: 10px;
+            opacity: 0.9;
+            font-size: clamp(16px, 2.2vw, 20px);
+            font-weight: 500;
+        }
+
+        /* Respect safe areas on modern phones */
+        @supports (padding: max(0px)) {
+            .wrap { padding: max(48px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-left)) max(48px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-right)); }
+        }
+    </style>
+    <link rel="icon" type="image/png" href="/kavi.png">
+</head>
+<body>
+    <main class="wrap">
+        <div class="card" role="region" aria-label="KAVI Coming Soon">
+            <div class="brand">
+                <img src="/kavi.png" alt="KAVI logo">
+            </div>
+            <h1>News. Redefined.</h1>
+            <p class="muted">Coming Soon</p>
+        </div>
+    </main>
+</body>
+</html>
+
+
